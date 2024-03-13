@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from ImageText.main import compare_faces_from_urls
 
 app = FastAPI()
 
@@ -12,7 +13,7 @@ def imageToText(image:str):
 
 @app.post("/imageComparison")
 def imageComparison(image1:str , image2 : str):
-    return 0
+    return {"verified" : "1" if compare_faces_from_urls(image1,image2) else "0" }
 
 @app.post("/videoLive")
 def videoLive():
