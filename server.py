@@ -7,11 +7,11 @@ def healthcheck():
     return {"Hello":"World"}
 
 @app.post("/imageToText")
-def imageToText(imageToText):
+def imageToText(image:str):
     return 0
 
 @app.post("/imageComparison")
-def imageComparison():
+def imageComparison(image1:str , image2 : str):
     return 0
 
 @app.post("/videoLive")
