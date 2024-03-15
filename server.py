@@ -14,7 +14,7 @@ app.add_middleware(
 
 @app.get("/hc")
 def healthcheck():
-    return {"Hello":"World"}
+    return Response(content={"HealthCheck":"OK"}, status_code=200)
 
 
 @app.post("/imageComparison")
