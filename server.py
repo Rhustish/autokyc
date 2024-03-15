@@ -1,6 +1,9 @@
 from fastapi import FastAPI,Response
 from fastapi.middleware.cors import CORSMiddleware
 from ImageMatching.main import compare_faces_from_urls
+import uvicorn
+
+
 
 app = FastAPI()
 
@@ -25,3 +28,5 @@ async def imageComparison(image1:str , image2 : str):
 @app.post("/videoLive")
 def videoLive():
     return 0
+
+uvicorn.run("main:app", host="0.0.0.0", port=4000, log_level="info")
