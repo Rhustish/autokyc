@@ -14,10 +14,10 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-@app.get("/hc")
+@app.get("/hc",status_code=200)
 def healthcheck():
 
-    return Response(content="ok", status_code=200)
+    return "OK"
 
 
 @app.post("/imageComparison")
