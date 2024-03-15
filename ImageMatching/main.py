@@ -2,6 +2,7 @@ import boto3
 import requests
 
 def compare_faces_from_urls(url1, url2):
+    session = boto3.Session()
     client = boto3.client('rekognition')
 
     # Download image data from URLs
@@ -23,4 +24,3 @@ def compare_faces_from_urls(url1, url2):
             return True
 
     return False
-
