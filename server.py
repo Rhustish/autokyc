@@ -1,7 +1,16 @@
 from fastapi import FastAPI,Response
+from fastapi.middleware.cors import CORSMiddleware
 from ImageMatching.main import compare_faces_from_urls
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 @app.get("/hc")
 def healthcheck():
