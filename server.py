@@ -20,9 +20,9 @@ def healthcheck():
     return "OK"
 
 
-@app.post("/imageComparison")
+@app.post("/imageComparison",status_code=200)
 async def imageComparison(image1:str , image2 : str):
-    return Response(content="1" if await compare_faces_from_urls(image1,image2) else "0", status_code=200)
+    return "1" if await compare_faces_from_urls(image1,image2) else "0"
 
 @app.post("/videoLive")
 def videoLive():
