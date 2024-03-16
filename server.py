@@ -14,6 +14,8 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+temp = 6
+
 @app.get("/hc",status_code=200)
 def healthcheck():
 
@@ -22,7 +24,9 @@ def healthcheck():
 
 @app.post("/imageComparison",status_code=200)
 def imageComparison(image1:str , image2 : str):
-    return "1" if compare_faces_from_urls(image1,image2) else "0"
+    temp+=1
+    return temp%2
+    
 
 @app.post("/videoLive")
 def videoLive():
