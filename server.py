@@ -22,8 +22,8 @@ def healthcheck():
     return "OK"
 
 
-@app.post("/imageComparison",status_code=200)
-def imageComparison(image1:str , image2 : str):
+@app.get("/imageComparison",status_code=200)
+def imageComparison():
     temp+=1
     return temp%2
     
