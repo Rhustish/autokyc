@@ -24,6 +24,7 @@ def healthcheck():
 
 @app.get("/imageComparison",status_code=200)
 def imageComparison():
+    global temp
     temp+=1
     return temp%2
     
